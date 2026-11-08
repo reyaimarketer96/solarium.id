@@ -1,0 +1,573 @@
+<!-- ========================================================================== -->
+<!-- SOLARIUM.ID — HOMEPAGE MASTER TRANSFORMATION (STAGING READY)               -->
+<!-- Visual Direction: Premium Architectural Solar Energy                        -->
+<!-- Architecture: Storyloop 1-6 + Interactive Savings + WhatsApp Conversion     -->
+<!-- ========================================================================== -->
+<div class="sol-portal-root">
+  <style>
+    .sol-portal-root {
+      --sp-bg-base: #080A0F;
+      --sp-bg-surface: #10141F;
+      --sp-bg-elevated: #161C2C;
+      --sp-border-subtle: rgba(250, 248, 245, 0.12);
+      --sp-border-hairline: rgba(250, 248, 245, 0.08);
+      --sp-text-display: #FAF8F5;
+      --sp-text-primary: #F3F1EC;
+      --sp-text-secondary: #9B9890;
+      --sp-text-muted: #6B6862;
+      --sp-accent-gold: #D97706;
+      --sp-accent-gold-hover: #F59E0B;
+      --sp-accent-emerald: #059669;
+      --sp-accent-emerald-light: #34D399;
+      --sp-btn-dark: #080A0F;
+      
+      background-color: var(--sp-bg-base);
+      color: var(--sp-text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+      overflow-x: clip;
+    }
+
+    .sol-portal-root * {
+      box-sizing: border-box;
+    }
+
+    .sp-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Typography */
+    .sp-display-h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--sp-text-display);
+      margin-bottom: 1.25rem;
+    }
+
+    .sp-section-h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--sp-text-display);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .sp-lead-p {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--sp-text-secondary);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    /* Buttons */
+    .sp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sp-btn:active {
+      transform: scale(0.97);
+    }
+
+    .sp-btn-primary {
+      background-color: var(--sp-accent-gold);
+      color: var(--sp-btn-dark);
+      border-color: var(--sp-accent-gold-hover);
+    }
+
+    .sp-btn-primary:hover {
+      background-color: var(--sp-accent-gold-hover);
+    }
+
+    .sp-btn-secondary {
+      background-color: transparent;
+      color: var(--sp-text-display);
+      border-color: var(--sp-border-subtle);
+    }
+
+    .sp-btn-secondary:hover {
+      background-color: rgba(250, 248, 245, 0.06);
+    }
+
+    .sp-btn-wa {
+      background-color: var(--sp-accent-emerald-light);
+      color: var(--sp-btn-dark);
+    }
+
+    .sp-btn-wa:hover {
+      background-color: #6EE7B7;
+    }
+
+    /* Sections */
+    .sp-section {
+      padding: clamp(3.5rem, 7vw, 6rem) 0;
+      border-bottom: 1px solid var(--sp-border-hairline);
+    }
+
+    /* Hero Grid */
+    .sp-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .sp-hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
+      }
+    }
+
+    .sp-hero-anchor-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--sp-border-hairline);
+    }
+
+    .sp-anchor-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sp-anchor-num {
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      font-weight: 800;
+      color: var(--sp-text-display);
+    }
+
+    .sp-anchor-lbl {
+      font-size: 0.8rem;
+      color: var(--sp-text-secondary);
+    }
+
+    /* Architectural Visual Box */
+    .sp-visual-box {
+      border-radius: 16px;
+      background-color: var(--sp-bg-surface);
+      border: 1px solid var(--sp-border-subtle);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Storyloop 3 Cards */
+    .sp-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .sp-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .sp-narrative-card {
+      background-color: var(--sp-bg-surface);
+      border: 1px solid var(--sp-border-hairline);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .sp-card-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sp-accent-gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .sp-card-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--sp-text-display);
+      margin-bottom: 0.5rem;
+    }
+
+    .sp-card-text {
+      font-size: 0.9rem;
+      color: var(--sp-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Interactive Savings Engine (Loop 4) */
+    .sp-calc-wrapper {
+      background-color: var(--sp-bg-surface);
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 16px;
+      padding: clamp(1.75rem, 4vw, 3rem);
+      margin-top: 2.5rem;
+    }
+
+    .sp-calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 860px) {
+      .sp-calc-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    .sp-range-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--sp-bg-elevated);
+      outline: none;
+      cursor: pointer;
+      margin: 1rem 0;
+    }
+
+    .sp-range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--sp-accent-gold);
+      border: 2px solid #FAF8F5;
+      cursor: pointer;
+    }
+
+    .sp-result-box {
+      background-color: var(--sp-bg-elevated);
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .sp-saving-value {
+      font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+      font-weight: 800;
+      color: var(--sp-accent-emerald-light);
+      margin: 6px 0;
+    }
+
+    /* Trust Pillars Grid */
+    .sp-trust-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .sp-trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sp-trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .sp-trust-card {
+      background-color: var(--sp-bg-surface);
+      border: 1px solid var(--sp-border-hairline);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .sp-trust-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--sp-accent-gold);
+    }
+
+    /* Final CTA Banner */
+    .sp-cta-box {
+      background: var(--sp-bg-surface);
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 16px;
+      padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+
+  <!-- ================= HERO ================= -->
+  <section class="sp-section" style="padding-top: 3.5rem;">
+    <div class="sp-container">
+      <div class="sp-hero-grid">
+        
+        <div>
+          <h1 class="sp-display-h1">
+            Ubah Atap Rumah Menjadi Pembangkit Mandiri.
+          </h1>
+
+          <p class="sp-lead-p">
+            Sebagian besar tagihan listrik rumah terbuang di siang hari. Solarium merancang instalasi PLTS atap yang menyatu anggun dengan arsitektur hunian Anda.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+            <a href="#simulasi-portal" class="sp-btn sp-btn-primary">
+              Cek Potensi Hemat
+            </a>
+            <a href="https://wa.me/6281338240851?text=Halo%20Solarium%2C%20saya%20ingin%20tanya%20mengenai%20investasi%20dan%20pemasangan%20PLTS." target="_blank" rel="noopener noreferrer" class="sp-btn sp-btn-secondary">
+              Tanya Investasi
+            </a>
+          </div>
+
+          <!-- LOOP 3: FINANCIAL REVEAL ANCHOR -->
+          <div class="sp-hero-anchor-bar">
+            <div class="sp-anchor-box">
+              <span class="sp-anchor-num">Sekitar Rp100 Juta</span>
+              <span class="sp-anchor-lbl">Investasi sistem on-grid terpasang</span>
+            </div>
+            <div style="width: 1px; height: 32px; background-color: var(--sp-border-subtle);"></div>
+            <div class="sp-anchor-box">
+              <span class="sp-anchor-num" style="color: var(--sp-accent-emerald-light);">Hingga Rp2 Juta / bln</span>
+              <span class="sp-anchor-lbl">Potensi hemat tagihan PLN*</span>
+            </div>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--sp-text-muted); margin-top: 0.5rem;">
+            *Berdasarkan profil daya R-2/R-3 (5.500 hingga 10.600 VA) dengan orientasi atap optimal. Desain final melalui konsultasi.
+          </div>
+        </div>
+
+        <!-- Architectural Visual Diagram -->
+        <div class="sp-visual-box">
+          <div style="text-align: center;">
+            <svg width="240" height="150" viewBox="0 0 240 150" fill="none" aria-hidden="true" style="margin: 0 auto; display: block;">
+              <polygon points="30,120 30,70 120,30 210,70 210,120" fill="#141B2D" stroke="rgba(250,248,245,0.15)" stroke-width="1.5"/>
+              <polygon points="45,67 120,34 120,58 45,91" fill="#0A0D14" stroke="#D97706" stroke-width="1.5"/>
+              <line x1="70" y1="56" x2="70" y2="80" stroke="rgba(217,119,6,0.4)" stroke-width="1"/>
+              <line x1="95" y1="45" x2="95" y2="69" stroke="rgba(217,119,6,0.4)" stroke-width="1"/>
+              <circle cx="185" cy="30" r="12" fill="#D97706" opacity="0.85"/>
+              <rect x="60" y="85" width="30" height="25" rx="2" fill="#1A2236"/>
+              <rect x="150" y="80" width="40" height="35" rx="2" fill="#1A2236"/>
+            </svg>
+          </div>
+          <div style="border-top: 1px solid var(--sp-border-hairline); padding-top: 1rem;">
+            <div style="font-weight: 700; font-size: 0.9rem; color: var(--sp-text-display); margin-bottom: 4px;">Kerapian Arsitektural Presisi</div>
+            <div style="font-size: 0.8rem; color: var(--sp-text-secondary); line-height: 1.4;">
+              Pemasangan klem khusus tanpa melubangi genteng, menjaga kemurnian estetika atap sekaligus perlindungan anti-bocor total.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 1 & 2 STORYLOOP ================= -->
+  <section class="sp-section" style="background-color: var(--sp-bg-surface);">
+    <div class="sp-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sp-section-h2">Kenapa Tagihan Listrik Naik Padahal Pemakaian Terasa Sama?</h2>
+        <p class="sp-lead-p" style="margin: 0 auto;">
+          Kenyamanan hunian modern menuntut konsumsi energi terbesar di siang hari saat matahari bersinar paling terik.
+        </p>
+      </div>
+
+      <div class="sp-cards-grid">
+        <div class="sp-narrative-card">
+          <div class="sp-card-tag">Masalah 1</div>
+          <div class="sp-card-heading">Beban Puncak Siang</div>
+          <div class="sp-card-text">
+            AC dan pendingin ruangan bekerja paling keras saat suhu luar paling panas. Di waktu yang sama, matahari menyediakan energi gratis melimpah di atas atap Anda.
+          </div>
+        </div>
+
+        <div class="sp-narrative-card">
+          <div class="sp-card-tag">Solusi 2</div>
+          <div class="sp-card-heading">Listrik Surya Mandiri</div>
+          <div class="sp-card-text">
+            PLTS atap menyuplai langsung kebutuhan listrik siang hari secara otomatis, memangkas penarikan daya dari meteran PLN tanpa kedipan lampu.
+          </div>
+        </div>
+
+        <div class="sp-narrative-card">
+          <div class="sp-card-tag">Hasil 3</div>
+          <div class="sp-card-heading">Kepastian 25 Tahun</div>
+          <div class="sp-card-text">
+            Dengan garansi performa panel hingga 25 tahun, aset energi hunian Anda terlindungi dari kenaikan tarif listrik di masa depan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 4: INTERACTIVE SAVINGS EXPERIENCE ================= -->
+  <section id="simulasi-portal" class="sp-section">
+    <div class="sp-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sp-section-h2">Seberapa Besar Penghematan yang Mungkin untuk Rumah Anda?</h2>
+        <p class="sp-lead-p" style="margin: 0 auto;">
+          Geser slider di bawah ini sesuai rata-rata rekening listrik bulanan Anda untuk melihat simulasi indikasi awal.
+        </p>
+      </div>
+
+      <div class="sp-calc-wrapper">
+        <div class="sp-calc-grid">
+          
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-weight: 600; font-size: 0.95rem; color: var(--sp-text-secondary);">Rata-rata Tagihan Listrik PLN:</span>
+              <span id="portalSliderVal" style="font-size: 1.6rem; font-weight: 800; color: var(--sp-text-display);">Rp 3.500.000</span>
+            </div>
+
+            <input type="range" id="portalRange" min="1500000" max="15000000" step="500000" value="3500000" class="sp-range-slider" oninput="runPortalCalc(this.value)">
+
+            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--sp-text-muted);">
+              <span>Rp 1,5 Juta</span>
+              <span>Rp 7,5 Juta</span>
+              <span>Rp 15 Juta+</span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: var(--sp-text-secondary); margin-top: 1.5rem; line-height: 1.6;">
+              Setiap atap memiliki karakter kemiringan dan arah hadap tersendiri. Simulasi awal ini memberikan estimasi sebelum survei engineering fisik dilakukan.
+            </p>
+
+            <div style="margin-top: 1.75rem;">
+              <a id="portalBtnWA" href="https://wa.me/6281338240851" target="_blank" rel="noopener noreferrer" class="sp-btn sp-btn-wa" style="width: 100%;">
+                Konsultasikan Tagihan Ini via WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="sp-result-box">
+            <div style="font-size: 0.8rem; color: var(--sp-text-muted); font-weight: 600;">POTENSI PENGHEMATAN BULANAN</div>
+            <div id="portalSavingMonthly" class="sp-saving-value">Rp 2.100.000 / bln</div>
+            <div style="font-size: 0.8rem; color: var(--sp-text-secondary); margin-bottom: 1.25rem;">Potensi pemangkasan beban listrik di siang hari</div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-top: 1px solid var(--sp-border-hairline); padding-top: 1rem;">
+              <div>
+                <div id="portalPayback" style="font-size: 1.25rem; font-weight: 700; color: var(--sp-text-display);">~ 4,2 Tahun</div>
+                <div style="font-size: 0.75rem; color: var(--sp-text-muted);">Estimasi balik modal</div>
+              </div>
+              <div>
+                <div style="font-size: 1.25rem; font-weight: 700; color: var(--sp-text-display);">25 Tahun</div>
+                <div style="font-size: 0.75rem; color: var(--sp-text-muted);">Garansi performa panel</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 5: EPC TRUST PILLARS ================= -->
+  <section class="sp-section" style="background-color: var(--sp-bg-surface);">
+    <div class="sp-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sp-section-h2">Standar Rekayasa & Keamanan Tanpa Kompromi</h2>
+        <p class="sp-lead-p" style="margin: 0 auto;">
+          Komitmen Solarium terhadap kepatuhan regulasi nasional dan ketahanan sistem jangka panjang.
+        </p>
+      </div>
+
+      <div class="sp-trust-grid">
+        <div class="sp-trust-card">
+          <div class="sp-trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--sp-text-display); margin-bottom: 4px;">Insinyur BNSP Resmi</div>
+          <div style="font-size: 0.85rem; color: var(--sp-text-secondary); line-height: 1.5;">
+            Perancangan elektrikal dan mekanikal dipimpin oleh insinyur bersertifikasi resmi BNSP ESDM.
+          </div>
+        </div>
+
+        <div class="sp-trust-card">
+          <div class="sp-trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--sp-text-display); margin-bottom: 4px;">Klem Bracket Anti-Bocor</div>
+          <div style="font-size: 0.85rem; color: var(--sp-text-secondary); line-height: 1.5;">
+            Metode jepit khusus tanpa melubangi genteng keramik atau beton, menjaga integritas atap 100%.
+          </div>
+        </div>
+
+        <div class="sp-trust-card">
+          <div class="sp-trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--sp-text-display); margin-bottom: 4px;">Komponen Tier-1 Global</div>
+          <div style="font-size: 0.85rem; color: var(--sp-text-secondary); line-height: 1.5;">
+            Modul surya dan inverter terdaftar Bloomberg BNEF dengan garansi performa tertulis 25 tahun.
+          </div>
+        </div>
+
+        <div class="sp-trust-card">
+          <div class="sp-trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <div style="font-weight: 700; font-size: 1rem; color: var(--sp-text-display); margin-bottom: 4px;">Izin PLN & Uji SLO</div>
+          <div style="font-size: 0.85rem; color: var(--sp-text-secondary); line-height: 1.5;">
+            Pengurusan administrasi kuota PLN dan penerbitan Sertifikat Laik Operasi (SLO) ESDM terima beres.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 6: FINAL WHATSAPP CONVERSION ================= -->
+  <section class="sp-section" style="border-bottom: none;">
+    <div class="sp-container">
+      <div class="sp-cta-box">
+        <h2 class="sp-section-h2" style="margin-bottom: 0.75rem;">Konsultasikan Tagihan Listrik Rumah Anda Hari Ini</h2>
+        <p class="sp-lead-p" style="margin: 0 auto 1.75rem auto;">
+          Dapatkan pemodelan 3D dan simulasi penghematan personal langsung dari tim engineer bersertifikasi Solarium.
+        </p>
+        <a href="https://wa.me/6281338240851?text=Halo%20Tim%20Solarium%2C%20saya%20ingin%20konsultasikan%20tagihan%20listrik%20dan%20potensi%20PLTS%20atap%20rumah%20saya." target="_blank" rel="noopener noreferrer" class="sp-btn sp-btn-primary" style="padding: 16px 36px;">
+          Konsultasikan via WhatsApp (0813-3824-0851)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script for dynamic calculation and contextual WhatsApp URL -->
+  <script>
+    function runPortalCalc(val) {
+      const b = parseFloat(val);
+      document.getElementById('portalSliderVal').innerText = 'Rp ' + b.toLocaleString('id-ID');
+      
+      const s = Math.round(b * 0.60);
+      let inv = 100000000;
+      if (b <= 2000000) inv = 60000000;
+      else if (b <= 3500000) inv = 100000000;
+      else if (b <= 6000000) inv = 160000000;
+      else inv = Math.round((b * 12 * 4.2) / 10000000) * 10000000;
+
+      const p = (inv / (s * 12)).toFixed(1);
+
+      document.getElementById('portalSavingMonthly').innerText = 'Rp ' + s.toLocaleString('id-ID') + ' / bln';
+      document.getElementById('portalPayback').innerText = '~ ' + p + ' Tahun';
+
+      const waMsg = encodeURIComponent(
+        'Halo Tim Solarium, saya mencoba simulasi di solarium.id.\n' +
+        'Rata-rata tagihan listrik rumah saya sekitar Rp ' + b.toLocaleString('id-ID') + ' per bulan.\n' +
+        'Saya ingin konsultasi potensi penghematan dan rencana investasi sistem PLTS yang cocok.'
+      );
+      document.getElementById('portalBtnWA').href = 'https://wa.me/6281338240851?text=' + waMsg;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const el = document.getElementById('portalRange');
+      if (el) runPortalCalc(el.value);
+    });
+  </script>
+</div>

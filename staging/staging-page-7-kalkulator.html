@@ -1,0 +1,245 @@
+<!-- ========================================================================== -->
+<!-- SOLARIUM.ID — KALKULATOR PLTS ATAP (STAGING READY)                        -->
+<!-- Purpose: Interactive 2-Step Savings Calculator & WhatsApp Conversion       -->
+<!-- ========================================================================== -->
+<div class="sol-calc-page-root">
+  <style>
+    .sol-calc-page-root {
+      --sc-bg: #080A0F;
+      --sc-card: #10141F;
+      --sc-elevated: #161C2C;
+      --sc-border: rgba(250, 248, 245, 0.12);
+      --sc-text-head: #FAF8F5;
+      --sc-text-body: #9B9890;
+      --sc-text-muted: #6B6862;
+      --sc-gold: #D97706;
+      --sc-gold-hover: #F59E0B;
+      --sc-emerald: #34D399;
+      --sc-dark: #080A0F;
+      
+      background-color: var(--sc-bg);
+      color: #F3F1EC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 2rem 0 4rem 0;
+    }
+
+    .sc-box {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .sc-card {
+      background-color: var(--sc-card);
+      border: 1px solid var(--sc-border);
+      border-radius: 20px;
+      padding: clamp(1.75rem, 4vw, 3rem);
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    .sc-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--sc-text-head);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    .sc-desc {
+      font-size: 1rem;
+      color: var(--sc-text-body);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.6;
+    }
+
+    .sc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      background: var(--sc-elevated);
+      outline: none;
+      cursor: pointer;
+      margin: 1.25rem 0;
+    }
+
+    .sc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--sc-gold);
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .sc-results {
+      background-color: var(--sc-elevated);
+      border: 1px solid var(--sc-border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .sc-saving-num {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--sc-emerald);
+      line-height: 1.1;
+      margin: 8px 0;
+    }
+
+    .sc-grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.25rem;
+      border-top: 1px solid rgba(250, 248, 245, 0.08);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .sc-stat-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--sc-text-head);
+    }
+
+    .sc-stat-lbl {
+      font-size: 0.8rem;
+      color: var(--sc-text-muted);
+    }
+
+    .sc-btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #059669;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 24px;
+      border-radius: 9999px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background-color 150ms ease, transform 150ms ease;
+    }
+
+    .sc-btn-submit:hover {
+      background-color: #047857;
+    }
+
+    .sc-btn-submit:active {
+      transform: scale(0.98);
+    }
+  </style>
+
+  <div class="sc-box">
+    <div class="sc-card">
+      <h1 class="sc-title">Kalkulator Penghematan PLTS Atap</h1>
+      <p class="sc-desc">
+        Ketahui potensi penghematan listrik bulanan dan proyeksi balik modal sistem pembangkit mandiri untuk hunian Anda.
+      </p>
+
+      <!-- Input Step -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <label style="font-weight: 700; font-size: 1rem; color: var(--sc-text-head);">
+            Rata-Rata Rekening Listrik PLN per Bulan:
+          </label>
+          <span id="calcPageDisplay" style="font-size: 1.8rem; font-weight: 900; color: var(--sc-gold);">Rp 3.500.000</span>
+        </div>
+
+        <input type="range" id="calcPageSlider" min="1500000" max="20000000" step="500000" value="3500000" class="sc-slider" oninput="runStandaloneCalc(this.value)">
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--sc-text-muted);">
+          <span>Rp 1,5 Juta</span>
+          <span>Rp 10 Juta</span>
+          <span>Rp 20 Juta+</span>
+        </div>
+      </div>
+
+      <!-- Instant Output Box -->
+      <div class="sc-results">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--sc-text-muted); letter-spacing: 0.05em;">ESTIMASI PENGHEMATAN BULANAN</div>
+        <div id="calcPageSaving" class="sc-saving-num">Rp 2.100.000 / bln</div>
+        <div style="font-size: 0.85rem; color: var(--sc-text-body);">Potensi penghematan pemakaian listrik di siang hari (09.00 - 15.00)</div>
+
+        <div class="sc-grid-stats">
+          <div>
+            <div id="calcPageKwp" class="sc-stat-val">5,2 kWp</div>
+            <div class="sc-stat-lbl">Estimasi Kapasitas Rekomendasi</div>
+          </div>
+          <div>
+            <div id="calcPagePayback" class="sc-stat-val">~ 4,2 Tahun</div>
+            <div class="sc-stat-lbl">Proyeksi Balik Modal</div>
+          </div>
+          <div>
+            <div class="sc-stat-val">25 Tahun</div>
+            <div class="sc-stat-lbl">Garansi Performa Panel</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct-to-WhatsApp Action -->
+      <a id="calcPageBtnWA" href="https://wa.me/6281338240851" target="_blank" rel="noopener noreferrer" class="sc-btn-submit">
+        💬 Dapatkan Hasil Simulasi & Proposal Lengkap via WhatsApp
+      </a>
+
+      <div style="font-size: 0.75rem; color: var(--sc-text-muted); text-align: center; margin-top: 1rem;">
+        *Perhitungan awal berdasarkan asumsi insolasi matahari rata-rata Indonesia dan tarif R-2/R-3 non-subsidi. Tidak ada data pribadi rahasia yang disimpan.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function runStandaloneCalc(val) {
+      const b = parseFloat(val);
+      document.getElementById('calcPageDisplay').innerText = 'Rp ' + b.toLocaleString('id-ID');
+
+      // Daytime self-consumption saving (~60%)
+      const monthlySaving = Math.round(b * 0.60);
+      
+      // Estimated kWp needed:
+      // Rate ~ Rp 1.700/kWh -> kWh/month = monthlySaving / 1700
+      // Daily kWh = kWh/month / 30
+      // kWp = Daily kWh / (4.0 PSH * 0.80 PR)
+      const kwhDaily = (monthlySaving / 1700) / 30;
+      const kwp = Math.round((kwhDaily / (4.0 * 0.80)) * 10) / 10;
+
+      // Investment and payback
+      let inv = 100000000;
+      if (b <= 2000000) inv = 60000000;
+      else if (b <= 3500000) inv = 100000000;
+      else if (b <= 6000000) inv = 160000000;
+      else inv = Math.round((b * 12 * 4.2) / 10000000) * 10000000;
+
+      const payback = (inv / (monthlySaving * 12)).toFixed(1);
+
+      document.getElementById('calcPageSaving').innerText = 'Rp ' + monthlySaving.toLocaleString('id-ID') + ' / bln';
+      document.getElementById('calcPageKwp').innerText = kwp + ' kWp';
+      document.getElementById('calcPagePayback').innerText = '~ ' + payback + ' Tahun';
+
+      const waMsg = encodeURIComponent(
+        'Halo Tim Solarium, saya baru saja menggunakan Kalkulator PLTS di solarium.id.\n\n' +
+        '• Rata-Rata Tagihan Listrik: Rp ' + b.toLocaleString('id-ID') + '/bulan\n' +
+        '• Estimasi Potensi Hemat: Rp ' + monthlySaving.toLocaleString('id-ID') + '/bulan\n' +
+        '• Rekomendasi Kapasitas: ~' + kwp + ' kWp\n\n' +
+        'Saya ingin konsultasi lebih lanjut mengenai jadwal survei atap dan estimasi investasi sistem untuk rumah saya.'
+      );
+      document.getElementById('calcPageBtnWA').href = 'https://wa.me/6281338240851?text=' + waMsg;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('calcPageSlider');
+      if (slider) runStandaloneCalc(slider.value);
+    });
+  </script>
+</div>

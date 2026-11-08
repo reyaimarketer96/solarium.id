@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solarium: Kontraktor Rumah Mandiri Energi dan PLTS Arsitektural</title>
+  <meta name="description" content="Solarium menghadirkan instalasi PLTS atap berstandar arsitektural untuk residensial mewah dan komersial. Investasi sekitar Rp100 Juta, potensi hemat hingga Rp2 Juta per bulan.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+/* Hallmark: deal=manual genre=editorial job=hire material=photo */
+    :root {
+      --sol-bg-base: #080A0F;
+      --sol-bg-surface: #10141F;
+      --sol-bg-elevated: #161C2C;
+      --sol-bg-glass: #10141F;
+      --sol-bg-fade-top: rgba(8, 10, 15, 0.2);
+      --sol-bg-fade-bottom: rgba(8, 10, 15, 0.95);
+      
+      --sol-border-hairline: rgba(250, 248, 245, 0.08);
+      --sol-border-subtle: rgba(250, 248, 245, 0.14);
+      --sol-border-focus: #D97706;
+
+      --sol-text-display: #FAF8F5;
+      --sol-text-primary: #F3F1EC;
+      --sol-text-secondary: #9B9890;
+      --sol-text-muted: #6B6862;
+      --sol-btn-dark: #080A0F;
+
+      --sol-accent-gold: #D97706;
+      --sol-accent-gold-dark: #92400E;
+      --sol-accent-gold-hover: #F59E0B;
+      --sol-accent-gold-soft: rgba(217, 119, 6, 0.14);
+
+      --sol-accent-emerald: #059669;
+      --sol-accent-emerald-dark: #047857;
+      --sol-accent-emerald-light: #34D399;
+      --sol-accent-emerald-hover: #10B981;
+      --sol-accent-emerald-soft: rgba(5, 150, 105, 0.14);
+
+      --sol-white-subtle: rgba(250, 248, 245, 0.06);
+      --sol-white-medium: rgba(250, 248, 245, 0.12);
+      --sol-thumb-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --sol-wa-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
+
+      --sol-font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --sol-container-max: 1200px;
+      --sol-gutter: clamp(1.25rem, 4vw, 3rem);
+
+      --sol-radius-sm: 6px;
+      --sol-radius-md: 12px;
+      --sol-radius-lg: 20px;
+      --sol-radius-pill: 9999px;
+
+      --sol-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow-x: clip;
+      background-color: var(--sol-bg-base);
+      color: var(--sol-text-primary);
+      font-family: var(--sol-font-main);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--sol-border-focus);
+      outline-offset: 3px;
+    }
+
+    :disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .sol-container {
+      width: 100%;
+      max-width: var(--sol-container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--sol-gutter);
+      padding-right: var(--sol-gutter);
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--sol-text-display);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      overflow-wrap: break-word;
+      text-wrap: balance;
+    }
+
+    .sol-display-title {
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    .sol-section-title {
+      font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .sol-section-intro {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      color: var(--sol-text-secondary);
+      max-width: 680px;
+      line-height: 1.65;
+    }
+
+    /* Navigation */
+    .sol-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--sol-bg-surface);
+      border-bottom: 1px solid var(--sol-border-hairline);
+      height: 76px;
+      display: flex;
+      align-items: center;
+      color: var(--sol-text-primary);
+    }
+
+    .sol-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .sol-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .sol-brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--sol-radius-sm);
+      background: linear-gradient(135deg, var(--sol-accent-gold) 0%, var(--sol-accent-gold-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sol-text-display);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .sol-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sol-brand-name {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--sol-text-display);
+      line-height: 1.1;
+    }
+
+    .sol-brand-sub {
+      font-size: 0.7rem;
+      color: var(--sol-text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .sol-nav-links {
+      display: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .sol-nav-links {
+        display: flex;
+      }
+    }
+
+    .sol-nav-link {
+      color: var(--sol-text-secondary);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      transition: color 150ms var(--sol-ease-out);
+    }
+
+    .sol-nav-link:hover {
+      color: var(--sol-text-display);
+    }
+
+    /* Buttons with high contrast */
+    .sol-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--sol-radius-pill);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: transform 150ms var(--sol-ease-out), background-color 150ms var(--sol-ease-out), border-color 150ms var(--sol-ease-out);
+    }
+
+    .sol-btn:active {
+      transform: scale(0.97);
+    }
+
+    .sol-btn-primary {
+      background-color: var(--sol-accent-gold);
+      color: var(--sol-btn-dark);
+      border-color: var(--sol-accent-gold-hover);
+    }
+
+    .sol-btn-primary:hover {
+      background-color: var(--sol-accent-gold-hover);
+    }
+
+    .sol-btn-secondary {
+      background-color: transparent;
+      color: var(--sol-text-primary);
+      border-color: var(--sol-border-subtle);
+    }
+
+    .sol-btn-secondary:hover {
+      background-color: var(--sol-white-subtle);
+      border-color: var(--sol-text-secondary);
+    }
+
+    .sol-btn-wa {
+      background-color: var(--sol-accent-emerald-light);
+      color: var(--sol-btn-dark);
+    }
+
+    .sol-btn-wa:hover {
+      background-color: var(--sol-accent-emerald-hover);
+    }
+
+    /* Section Rhythm */
+    .sol-section {
+      padding-top: clamp(4rem, 8vw, 7.5rem);
+      padding-bottom: clamp(4rem, 8vw, 7.5rem);
+      border-bottom: 1px solid var(--sol-border-hairline);
+    }
+
+    /* Hero Section */
+    .sol-hero {
+      padding-top: clamp(3.5rem, 6vw, 6rem);
+      padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+      position: relative;
+    }
+
+    .sol-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .sol-hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 4rem;
+      }
+    }
+
+    .sol-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .sol-hero-anchor {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--sol-border-hairline);
+    }
+
+    .sol-anchor-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sol-anchor-value {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 800;
+      color: var(--sol-text-display);
+      letter-spacing: -0.02em;
+    }
+
+    .sol-anchor-label {
+      font-size: 0.8125rem;
+      color: var(--sol-text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Architectural Visual Frame */
+    .sol-hero-visual {
+      position: relative;
+      border-radius: var(--sol-radius-lg);
+      background-color: var(--sol-bg-surface);
+      color: var(--sol-text-primary);
+      border: 1px solid var(--sol-border-subtle);
+      overflow: hidden;
+      aspect-ratio: 4 / 3.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+
+    .sol-visual-graphic {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 25%, var(--sol-accent-gold-soft) 0%, transparent 60%),
+                  linear-gradient(180deg, var(--sol-bg-fade-top) 0%, var(--sol-bg-fade-bottom) 100%),
+                  var(--sol-bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sol-visual-overlay {
+      position: relative;
+      z-index: 2;
+      background-color: var(--sol-bg-surface);
+      border: 1px solid var(--sol-border-hairline);
+      border-radius: var(--sol-radius-md);
+      padding: 1.25rem;
+      color: var(--sol-text-primary);
+    }
+
+    .sol-visual-overlay-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--sol-text-display);
+      margin-bottom: 4px;
+    }
+
+    .sol-visual-overlay-desc {
+      font-size: 0.75rem;
+      color: var(--sol-text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Storyloop Card Grid */
+    .sol-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .sol-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .sol-card {
+      background-color: var(--sol-bg-surface);
+      color: var(--sol-text-primary);
+      border: 1px solid var(--sol-border-hairline);
+      border-radius: var(--sol-radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 150ms var(--sol-ease-out), transform 150ms var(--sol-ease-out);
+    }
+
+    .sol-card:hover {
+      border-color: var(--sol-border-subtle);
+      transform: translateY(-2px);
+    }
+
+    .sol-card-number {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--sol-accent-gold);
+      margin-bottom: 1rem;
+    }
+
+    .sol-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .sol-card-body {
+      font-size: 0.9375rem;
+      color: var(--sol-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Interactive Savings Experience (Loop 4) */
+    .sol-calc-container {
+      background-color: var(--sol-bg-surface);
+      border: 1px solid var(--sol-border-subtle);
+      border-radius: var(--sol-radius-lg);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      margin-top: 3rem;
+    }
+
+    .sol-calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .sol-calc-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 3.5rem;
+      }
+    }
+
+    .sol-slider-group {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .sol-slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+
+    .sol-slider-label {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--sol-text-secondary);
+    }
+
+    .sol-slider-val {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--sol-text-display);
+      letter-spacing: -0.02em;
+    }
+
+    .sol-range-input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--sol-bg-elevated);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .sol-range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--sol-accent-gold);
+      border: 2px solid var(--sol-text-display);
+      box-shadow: var(--sol-thumb-shadow);
+      cursor: pointer;
+      transition: transform 150ms var(--sol-ease-out);
+    }
+
+    .sol-range-input::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .sol-slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--sol-text-muted);
+    }
+
+    /* Output Card */
+    .sol-result-card {
+      background-color: var(--sol-bg-elevated);
+      color: var(--sol-text-primary);
+      border: 1px solid var(--sol-border-subtle);
+      border-radius: var(--sol-radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sol-result-highlight {
+      border-bottom: 1px solid var(--sol-border-hairline);
+      padding-bottom: 1.5rem;
+    }
+
+    .sol-result-label {
+      font-size: 0.8125rem;
+      color: var(--sol-text-muted);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .sol-result-saving {
+      font-size: clamp(2rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--sol-accent-emerald-light);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .sol-result-subtext {
+      font-size: 0.8125rem;
+      color: var(--sol-text-secondary);
+      margin-top: 8px;
+    }
+
+    .sol-result-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .sol-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sol-stat-num {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--sol-text-display);
+    }
+
+    .sol-stat-desc {
+      font-size: 0.75rem;
+      color: var(--sol-text-muted);
+    }
+
+    /* Trust Section */
+    .sol-trust-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .sol-trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sol-trust-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .sol-trust-item {
+      background-color: var(--sol-bg-surface);
+      border: 1px solid var(--sol-border-hairline);
+      border-radius: var(--sol-radius-md);
+      padding: 1.75rem;
+    }
+
+    .sol-trust-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: var(--sol-white-subtle);
+      border: 1px solid var(--sol-border-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--sol-accent-gold);
+    }
+
+    .sol-trust-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .sol-trust-desc {
+      font-size: 0.875rem;
+      color: var(--sol-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* FAQ Section */
+    .sol-faq-group {
+      max-width: 800px;
+      margin: 3rem auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sol-faq-item {
+      background-color: var(--sol-bg-surface);
+      border: 1px solid var(--sol-border-hairline);
+      border-radius: var(--sol-radius-md);
+      overflow: hidden;
+    }
+
+    .sol-faq-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--sol-text-display);
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+    }
+
+    .sol-faq-btn:hover {
+      background-color: var(--sol-white-subtle);
+    }
+
+    .sol-faq-arrow {
+      transition: transform 200ms var(--sol-ease-out);
+      color: var(--sol-text-muted);
+      flex-shrink: 0;
+    }
+
+    .sol-faq-item[open] .sol-faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    .sol-faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      font-size: 0.9375rem;
+      color: var(--sol-text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Bottom Final CTA Band */
+    .sol-cta-banner {
+      background: var(--sol-bg-surface);
+      color: var(--sol-text-primary);
+      border: 1px solid var(--sol-border-subtle);
+      border-radius: var(--sol-radius-lg);
+      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .sol-cta-banner h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .sol-cta-banner p {
+      color: var(--sol-text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    .sol-footer {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+      background-color: var(--sol-bg-base);
+      color: var(--sol-text-secondary);
+      border-top: 1px solid var(--sol-border-hairline);
+    }
+
+    .sol-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .sol-footer-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    .sol-footer-col-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--sol-text-display);
+      margin-bottom: 1.25rem;
+    }
+
+    .sol-footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sol-footer-links a {
+      color: var(--sol-text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 150ms var(--sol-ease-out);
+    }
+
+    .sol-footer-links a:hover {
+      color: var(--sol-text-display);
+    }
+
+    .sol-footer-bottom {
+      border-top: 1px solid var(--sol-border-hairline);
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8125rem;
+      color: var(--sol-text-muted);
+    }
+
+    /* Mobile Floating WhatsApp Button */
+    .sol-float-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background-color: var(--sol-accent-emerald-light);
+      color: var(--sol-btn-dark);
+      padding: 12px 20px;
+      border-radius: var(--sol-radius-pill);
+      box-shadow: var(--sol-wa-shadow);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 150ms var(--sol-ease-out);
+    }
+
+    .sol-float-wa:active {
+      transform: scale(0.95);
+    }
+
+    @media (min-width: 900px) {
+      .sol-float-wa {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER & NAV ================= -->
+  <header class="sol-nav">
+    <div class="sol-container sol-nav-inner">
+      <a href="/" class="sol-brand" aria-label="Solarium Beranda">
+        <div class="sol-brand-mark">S</div>
+        <div class="sol-brand-text">
+          <span class="sol-brand-name">SOLARIUM</span>
+          <span class="sol-brand-sub">Architectural Energy</span>
+        </div>
+      </a>
+
+      <nav class="sol-nav-links" aria-label="Navigasi Utama">
+        <a href="#cerita" class="sol-nav-link">Peluang</a>
+        <a href="#simulasi" class="sol-nav-link">Simulasi Hemat</a>
+        <a href="#keunggulan" class="sol-nav-link">Standar Mutu EPC</a>
+        <a href="#faq" class="sol-nav-link">Tanya Jawab</a>
+      </nav>
+
+      <div>
+        <a href="https://wa.me/6281338240851?text=Halo%20Tim%20Solarium%2C%20saya%20ingin%20konsultasi%20mengenai%20sistem%20PLTS%20atap%20untuk%20hunian%20saya." target="_blank" rel="noopener noreferrer" class="sol-btn sol-btn-primary">
+          Konsultasi WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (STORYLOOP 1 & 2) ================= -->
+  <section class="sol-hero">
+    <div class="sol-container">
+      <div class="sol-hero-grid">
+        
+        <div>
+          <h1 class="sol-display-title">
+            Ubah Atap Rumah Menjadi Pembangkit Mandiri.
+          </h1>
+
+          <p class="sol-section-intro" style="margin-top: 1.5rem;">
+            Listrik surya menyatu dengan estetika atap hunian Anda.
+          </p>
+
+          <div class="sol-hero-actions">
+            <a href="#simulasi" class="sol-btn sol-btn-primary">
+              Cek Potensi Hemat
+            </a>
+            <a href="https://wa.me/6281338240851?text=Halo%20Solarium%2C%20saya%20ingin%20tanya%20mengenai%20investasi%20dan%20pemasangan%20PLTS." target="_blank" rel="noopener noreferrer" class="sol-btn sol-btn-secondary">
+              Tanya Investasi
+            </a>
+          </div>
+
+          <!-- LOOP 3: THE FINANCIAL REVEAL -->
+          <div class="sol-hero-anchor">
+            <div class="sol-anchor-stat">
+              <span class="sol-anchor-value">Sekitar Rp100 Juta</span>
+              <span class="sol-anchor-label">Investasi sistem on-grid terpasang</span>
+            </div>
+            <div style="width: 1px; height: 36px; background-color: var(--sol-border-subtle);"></div>
+            <div class="sol-anchor-stat">
+              <span class="sol-anchor-value" style="color: var(--sol-accent-emerald-light);">Hingga Rp2 Juta / bln</span>
+              <span class="sol-anchor-label">Potensi hemat tagihan PLN*</span>
+            </div>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--sol-text-muted); margin-top: 0.75rem;">
+            *Berdasarkan profil penggunaan daya R-2/R-3 (5.500 hingga 10.600 VA) dengan orientasi atap optimal. Desain final melalui konsultasi.
+          </p>
+        </div>
+
+        <!-- Architectural Visual Frame -->
+        <div class="sol-hero-visual">
+          <div class="sol-visual-graphic">
+            <svg width="280" height="200" viewBox="0 0 280 200" fill="none" aria-hidden="true">
+              <polygon points="40,160 40,90 140,40 240,90 240,160" fill="#141B2D" stroke="rgba(250,248,245,0.15)" stroke-width="1.5"/>
+              <polygon points="55,87 140,45 140,75 55,117" fill="#0A0D14" stroke="#D97706" stroke-width="1.5"/>
+              <line x1="83" y1="73" x2="83" y2="103" stroke="rgba(217,119,6,0.4)" stroke-width="1"/>
+              <line x1="111" y1="59" x2="111" y2="89" stroke="rgba(217,119,6,0.4)" stroke-width="1"/>
+              <circle cx="210" cy="40" r="14" fill="#D97706" opacity="0.85"/>
+              <line x1="210" y1="18" x2="210" y2="10" stroke="#D97706" stroke-width="2"/>
+              <line x1="228" y1="28" x2="234" y2="22" stroke="#D97706" stroke-width="2"/>
+              <line x1="232" y1="40" x2="240" y2="40" stroke="#D97706" stroke-width="2"/>
+              <rect x="75" y="115" width="40" height="35" rx="3" fill="#1A2236"/>
+              <rect x="165" y="105" width="50" height="45" rx="3" fill="#1A2236"/>
+            </svg>
+          </div>
+          <div class="sol-visual-overlay">
+            <div class="sol-visual-overlay-title">Estetika Arsitektural Tanpa Kompromi</div>
+            <div class="sol-visual-overlay-desc">
+              Pemasangan presisi dengan klem khusus anti-bocor tanpa melubangi genteng, menjaga kemurnian garis atap hunian modern.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STORYLOOP 1 & 2 EXPLANATION ================= -->
+  <section id="cerita" class="sol-section" style="background-color: var(--sol-bg-surface);">
+    <div class="sol-container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <h2 class="sol-section-title">Kenapa Tagihan Listrik Terus Naik Padahal Gaya Hidup Terasa Sama?</h2>
+        <p class="sol-section-intro" style="margin: 0 auto;">
+          Kebutuhan kenyamanan hunian modern seperti pendingin ruangan sepanjang siang menuntut energi tanpa henti.
+        </p>
+      </div>
+
+      <div class="sol-grid-3">
+        <div class="sol-card">
+          <div>
+            <div class="sol-card-number">Masalah 1</div>
+            <h3 class="sol-card-title">Beban Puncak di Siang Hari</h3>
+            <p class="sol-card-body">
+              AC dan pendingin menyala terberat saat suhu luar paling panas. Di waktu yang sama, matahari menyediakan energi gratis melimpah tepat di atas atap Anda.
+            </p>
+          </div>
+        </div>
+
+        <div class="sol-card">
+          <div>
+            <div class="sol-card-number">Solusi 2</div>
+            <h3 class="sol-card-title">Listrik Surya Mandiri</h3>
+            <p class="sol-card-body">
+              PLTS atap menyuplai langsung seluruh kebutuhan listrik siang hari. Ketergantungan terhadap penarikan daya dari meteran PLN terpangkas signifikan secara otomatis.
+            </p>
+          </div>
+        </div>
+
+        <div class="sol-card">
+          <div>
+            <div class="sol-card-number">Hasil 3</div>
+            <h3 class="sol-card-title">Kepastian Biaya 25 Tahun</h3>
+            <p class="sol-card-body">
+              Dengan garansi performa linier hingga 25 tahun, biaya energi hunian Anda terlindungi dari kenaikan tarif listrik di masa depan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 4: INTERACTIVE SAVINGS EXPERIENCE ================= -->
+  <section id="simulasi" class="sol-section">
+    <div class="sol-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sol-section-title">Seberapa Besar Penghematan yang Mungkin untuk Rumah Anda?</h2>
+        <p class="sol-section-intro" style="margin: 0 auto;">
+          Geser slider di bawah ini sesuai rata-rata rekening listrik bulanan Anda untuk melihat indikasi penghematan awal yang realistis.
+        </p>
+      </div>
+
+      <div class="sol-calc-container">
+        <div class="sol-calc-grid">
+          
+          <div>
+            <div class="sol-slider-group">
+              <div class="sol-slider-header">
+                <span class="sol-slider-label">Rata-rata Tagihan Listrik PLN:</span>
+                <span id="sliderValueDisplay" class="sol-slider-val">Rp 3.500.000</span>
+              </div>
+              
+              <input type="range" id="billRange" min="1500000" max="15000000" step="500000" value="3500000" class="sol-range-input" oninput="calculateSavings(this.value)">
+              
+              <div class="sol-slider-ticks">
+                <span>Rp 1,5 Juta</span>
+                <span>Rp 7,5 Juta</span>
+                <span>Rp 15 Juta+</span>
+              </div>
+            </div>
+
+            <p style="font-size: 0.875rem; color: var(--sol-text-secondary); line-height: 1.6;">
+              Setiap atap memiliki karakter unik: sudut kemiringan, arah hadap matahari, dan bayangan pohon. Simulasi ini memberikan indikasi rekayasa awal sebelum survei lokasi.
+            </p>
+
+            <div style="margin-top: 2rem;">
+              <a id="btnSimulasiWA" href="https://wa.me/6281338240851" target="_blank" rel="noopener noreferrer" class="sol-btn sol-btn-wa" style="width: 100%;">
+                Konsultasikan Tagihan Ini via WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Output Preview -->
+          <div class="sol-result-card">
+            <div class="sol-result-highlight">
+              <div class="sol-result-label">Potensi penghematan bulanan</div>
+              <div id="resSavingsMonthly" class="sol-result-saving">Rp 2.100.000 / bln</div>
+              <div class="sol-result-subtext">Potensi penghematan pemakaian listrik di siang hari</div>
+            </div>
+
+            <div class="sol-result-stats">
+              <div class="sol-stat-item">
+                <span id="resPaybackYears" class="sol-stat-num">~ 4,2 Tahun</span>
+                <span class="sol-stat-desc">Estimasi balik modal sistem</span>
+              </div>
+              <div class="sol-stat-item">
+                <span class="sol-stat-num">25 Tahun</span>
+                <span class="sol-stat-desc">Garansi performa panel</span>
+              </div>
+            </div>
+
+            <div style="padding-top: 1rem; border-top: 1px solid var(--sol-border-hairline); font-size: 0.75rem; color: var(--sol-text-muted);">
+              Estimasi berbasis tarif PLN non-subsidi dan insolasi rata-rata wilayah Indonesia. Rincian sistem final disesuaikan hasil analisis atap personal.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 5: THE TRUST REVEAL (EPC STANDARDS) ================= -->
+  <section id="keunggulan" class="sol-section" style="background-color: var(--sol-bg-surface);">
+    <div class="sol-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sol-section-title">Standar Rekayasa & Keamanan Tanpa Kompromi</h2>
+        <p class="sol-section-intro" style="margin: 0 auto;">
+          Kami memadukan kepatuhan regulasi ketenagalistrikan nasional dengan keahlian teknis agar sistem Anda beroperasi aman dan awet selama puluhan tahun.
+        </p>
+      </div>
+
+      <div class="sol-trust-grid">
+        
+        <div class="sol-trust-item">
+          <div class="sol-trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="sol-trust-title">Insinyur BNSP Resmi</h3>
+          <p class="sol-trust-desc">
+            Perancangan elektrikal dan perakitan mekanikal dipimpin oleh tenaga ahli berlisensi BNSP LSP Energi Terbarukan.
+          </p>
+        </div>
+
+        <div class="sol-trust-item">
+          <div class="sol-trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="sol-trust-title">Bracket Klem Anti-Bocor</h3>
+          <p class="sol-trust-desc">
+            Sistem klem aluminium tanpa melubangi genteng keramik atau beton, menjamin integritas waterproofing atap rumah.
+          </p>
+        </div>
+
+        <div class="sol-trust-item">
+          <div class="sol-trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="sol-trust-title">Komponen Tier-1 Global</h3>
+          <p class="sol-trust-desc">
+            Hanya menggunakan modul surya dan inverter terdaftar Tier-1 Bloomberg dengan garansi performa tertulis 25 tahun.
+          </p>
+        </div>
+
+        <div class="sol-trust-item">
+          <div class="sol-trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="sol-trust-title">Izin PLN & Uji SLO</h3>
+          <p class="sol-trust-desc">
+            Pengurusan administrasi kuota PLN dan penerbitan Sertifikat Laik Operasi (SLO) resmi ESDM secara terima beres.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="sol-section">
+    <div class="sol-container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <h2 class="sol-section-title">Pertanyaan yang Sering Diajukan</h2>
+        <p class="sol-section-intro" style="margin: 0 auto;">
+          Jawaban lugas seputar pemasangan, izin, dan keandalan sistem PLTS atap.
+        </p>
+      </div>
+
+      <div class="sol-faq-group">
+        
+        <details class="sol-faq-item" open>
+          <summary class="sol-faq-btn">
+            <span>Berapa lama proses pemasangan PLTS di rumah tinggal?</span>
+            <svg class="sol-faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="sol-faq-answer">
+            Pekerjaan fisik di atap rata-rata memerlukan waktu 2 hingga 4 hari kerja tergantung luasan bidang. Proses paralel seperti verifikasi dokumen perizinan PLN dikawal oleh tim perizinan kami secara terima beres.
+          </div>
+        </details>
+
+        <details class="sol-faq-item">
+          <summary class="sol-faq-btn">
+            <span>Apakah pemasangan panel surya bisa menyebabkan kebocoran atap?</span>
+            <svg class="sol-faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="sol-faq-answer">
+            Tidak. Kami menggunakan sistem klem aluminium khusus yang menjepit permukaan tanpa melubangi genteng keramik atau beton. Untuk atap spandek, digunakan baut berpengunci seal EPDM tahan cuaca ekstrem.
+          </div>
+        </details>
+
+        <details class="sol-faq-item">
+          <summary class="sol-faq-btn">
+            <span>Apa yang terjadi saat cuaca mendung atau hujan?</span>
+            <svg class="sol-faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="sol-faq-answer">
+            Panel surya tetap memproduksi listrik dari radiasi sinar matahari difus meski dalam intensitas lebih rendah. Sistem On-Grid secara cerdas dan mulus memadukan suplai surya dengan listrik PLN tanpa kedipan lampu sama sekali.
+          </div>
+        </details>
+
+        <details class="sol-faq-item">
+          <summary class="sol-faq-btn">
+            <span>Bagaimana langkah pertama untuk mendapatkan simulasi personal?</span>
+            <svg class="sol-faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="sol-faq-answer">
+            Cukup hubungi tim engineer kami melalui WhatsApp dengan melampirkan foto rekening atau token listrik PLN terakhir dan foto bentuk atap rumah Anda. Tim kami akan menyiapkan pemodelan 3D dan simulasi finansial khusus untuk hunian Anda.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOOP 6: THE ACTION (CONVERSION BANNER) ================= -->
+  <section class="sol-section" style="padding-top: 2rem;">
+    <div class="sol-container">
+      <div class="sol-cta-banner">
+        <h2>Konsultasikan Potensi Energi Rumah Anda Hari Ini</h2>
+        <p>
+          Diskusikan rencana instalasi Anda langsung bersama tim engineer bersertifikasi Solarium. Tanpa komitmen, tanpa jargon rumit.
+        </p>
+        <a href="https://wa.me/6281338240851?text=Halo%20Tim%20Solarium%2C%20saya%20ingin%20konsultasikan%20tagihan%20listrik%20dan%20potensi%20PLTS%20atap%20rumah%20saya." target="_blank" rel="noopener noreferrer" class="sol-btn sol-btn-primary" style="padding: 16px 36px; font-size: 1rem;">
+          Konsultasikan Tagihan via WhatsApp (0813-3824-0851)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="sol-footer">
+    <div class="sol-container">
+      <div class="sol-footer-grid">
+        
+        <div>
+          <div class="sol-brand" style="margin-bottom: 1rem;">
+            <div class="sol-brand-mark">S</div>
+            <div class="sol-brand-text">
+              <span class="sol-brand-name">SOLARIUM</span>
+              <span class="sol-brand-sub">Architectural Energy</span>
+            </div>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--sol-text-secondary); max-width: 320px; line-height: 1.6;">
+            Kontraktor EPC spesialis hunian mandiri energi dan instalasi PLTS atap terintegrasi arsitektur di Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <div class="sol-footer-col-title">Solusi Rekayasa</div>
+          <ul class="sol-footer-links">
+            <li><a href="/panel-surya-untuk-rumah/">PLTS Residensial Atap</a></li>
+            <li><a href="/solusi/plts-pabrik-manufaktur/">PLTS Industri & Komersial</a></li>
+            <li><a href="/kalkulator-plts/">Kalkulator Penghematan</a></li>
+            <li><a href="/legalitas-sertifikasi/">Sertifikasi Teknisi BNSP</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="sol-footer-col-title">Konsultasi Resmi</div>
+          <ul class="sol-footer-links">
+            <li><span style="color: var(--sol-text-muted);">WhatsApp:</span> <a href="https://wa.me/6281338240851">0813-3824-0851</a></li>
+            <li><span style="color: var(--sol-text-muted);">Email:</span> <a href="mailto:admin@solarium.id">admin@solarium.id</a></li>
+            <li><span style="color: var(--sol-text-muted);">Jangkauan:</span> Jabodetabek, Jawa & Nasional</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sol-footer-bottom">
+        <div>&copy; 2026 Solarium Indonesia. Seluruh hak cipta dilindungi undang-undang.</div>
+        <div>Standar Kepatuhan K3 & PUIL 2020 • Permen ESDM No. 2/2024</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile WhatsApp CTA -->
+  <a id="floatWaBtn" href="https://wa.me/6281338240851?text=Halo%20Solarium%2C%20saya%20ingin%20konsultasi%20PLTS%20atap." target="_blank" rel="noopener noreferrer" class="sol-float-wa" aria-label="Konsultasi WhatsApp">
+    <span>WhatsApp Engineer</span>
+  </a>
+
+  <!-- ================= JAVASCRIPT: LOGIC & DYNAMIC WHATSAPP FUNNEL ================= -->
+  <script>
+    function calculateSavings(billAmount) {
+      const bill = parseFloat(billAmount);
+      
+      document.getElementById('sliderValueDisplay').innerText = 'Rp ' + bill.toLocaleString('id-ID');
+
+      const monthlySavings = Math.round(bill * 0.60);
+      
+      let estimatedInvestment = 100000000;
+      if (bill <= 2000000) {
+        estimatedInvestment = 60000000;
+      } else if (bill <= 3500000) {
+        estimatedInvestment = 100000000;
+      } else if (bill <= 6000000) {
+        estimatedInvestment = 160000000;
+      } else {
+        estimatedInvestment = Math.round((bill * 12 * 4.2) / 10000000) * 10000000;
+      }
+
+      const paybackYears = (estimatedInvestment / (monthlySavings * 12)).toFixed(1);
+
+      document.getElementById('resSavingsMonthly').innerText = 'Rp ' + monthlySavings.toLocaleString('id-ID') + ' / bln';
+      document.getElementById('resPaybackYears').innerText = '~ ' + paybackYears + ' Tahun';
+
+      const waNumber = '6281338240851';
+      const msg = encodeURIComponent(
+        `Halo Tim Solarium, saya baru saja mencoba simulasi di solarium.id.\n` +
+        `Rata-rata tagihan listrik rumah saya sekitar Rp ${bill.toLocaleString('id-ID')} per bulan.\n` +
+        `Saya ingin konsultasi mengenai potensi penghematan dan rencana investasi sistem PLTS yang cocok untuk hunian saya.`
+      );
+      
+      const dynamicUrl = `https://wa.me/${waNumber}?text=${msg}`;
+      document.getElementById('btnSimulasiWA').href = dynamicUrl;
+      
+      const floatWa = document.getElementById('floatWaBtn');
+      if (floatWa) {
+        floatWa.href = dynamicUrl;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      calculateSavings(document.getElementById('billRange').value);
+    });
+  </script>
+</body>
+</html>

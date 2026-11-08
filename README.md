@@ -1,13 +1,11 @@
 # Solarium.id
 
-Workspace produksi UI/UX, SEO dan konten Solarium.
+Proyek UI/UX, SEO dan konten Solarium. Mulai dari [AGENTS.md](AGENTS.md), [DNA](DNA_SOLARIUM.md), [brief cloud](BRIEF_CLOUD_SOLARIUM.md), dan [rencana produksi](RENCANA_PRODUKSI_SEO.md).
 
-Mulai dari [AGENTS.md](AGENTS.md), [DNA Solarium](DNA_SOLARIUM.md), dan [brief cloud](BRIEF_CLOUD_SOLARIUM.md).
+Repository publik: tidak menyimpan token, konfigurasi autentikasi, data pelanggan, dokumen penawaran internal atau ekspor keyword internal. Data keyword akan disimpan di repository privat terpisah sesuai keputusan pemilik.
 
-Dokumen dan prototype berstatus draf sampai diverifikasi. Draft historis dapat memuat placeholder, klaim yang belum terbukti, sumber tarif lama, serta rumus yang sudah digantikan DNA. Jangan memublikasikannya tanpa perbaikan dan pemeriksaan.
+Draft dan prototype historis belum siap dipublikasikan: audit fakta, klaim, placeholder, tarif, rumus, aksesibilitas dan mobile sebelum digunakan. DNA terbaru mengungguli blueprint lama. Ilustrasi AI bukan foto proyek.
 
-Repository publik ini tidak menyimpan token, konfigurasi autentikasi, data pelanggan, dokumen penawaran internal atau backup WordPress. Posisi harga mengikuti DNA versi publik; sumber internal harus disediakan melalui akses privat jika diperlukan.
+Skill tersedia di project-skills/. Sejumlah referensi gambar tema skill tidak disertakan; jangan mengklaim telah melihat gambar tersebut. Aset proyek ada di assets/ai-generated/.
 
-Aset AI harus berlabel ilustrasi. Proyek dan kredensial hanya boleh diklaim berdasarkan bukti asli.
-
-Upload ke GitHub tidak otomatis memulai task Codex Cloud. Environment dan task cloud harus dibuat serta diverifikasi terpisah.
+Upload GitHub bukan bukti task cloud sudah berjalan. Environment dan task cloud perlu dibuat dan diverifikasi terpisah. Belum ada autentikasi WordPress dari environment ini.

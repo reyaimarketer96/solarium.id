@@ -1,0 +1,10 @@
+.codex/
+.mcp.json
+.env
+.env.*
+!.env.example
+backup_pages/
+node_modules/
+SOLARIUM_CLOUD_HANDOFF_*.zip
+*.pem
+*.key
